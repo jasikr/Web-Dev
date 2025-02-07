@@ -1,0 +1,134 @@
+
+
+.content{
+    width: 100%;
+    margin-top: 72px;
+    padding-bottom: 32px;
+    justify-content: center;
+    display: flex;
+    flex-grow: 1;
+}
+
+.phone{
+    height: 581.15px;
+    margin-bottom: 12px;
+    background-image: url(home-phones.png);
+    align-self: center;
+    flex-basis: 380.32px;
+    margin-right: 32px;
+    background-position: -46px 0;
+
+}
+
+.screenshot{
+    margin-top: 27px;
+    margin-left: 112px;
+    /* flex-direction: column;  */
+    display: flex;
+    /* position: relative;  */
+    width: 250px;
+}
+
+.form-input{
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 350px;
+    margin-top: 12px;
+    flex-grow: 1;
+}
+
+.main-section{
+    align-items: center;
+    border: 1px solid rgb(219, 219, 219);
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 10px;
+    padding: 10px 0;
+}
+
+.logo{
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
+.form-section{
+    margin-bottom: 10px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.inputs{
+    margin: 0 40px 6px;
+}
+
+.place{
+    left: 8px;
+    line-height: 36px;
+    position: absolute;
+}
+
+.input-form{
+    border: 0;
+    flex: 1 0 auto;
+    padding: 9px 0 7px 8px;
+}
+
+.button-section{
+    margin: 8px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.button-form{
+    background-color: rgb(0, 149, 246);
+    border-radius: 8px;
+    color: white;
+    width: 100%;
+    padding: 7px 16px;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    opacity: 0.7;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.extra{
+    display: flex;
+    flex-direction: row;
+}
+
+.line1{
+    position: relative;
+    top: 0.55em;
+    height: 1px;
+    background-color: rgb(219, 219, 219);
+    flex-grow: 1;
+}
+
+.additions{
+    margin-left: 18px;
+    margin-right: 18px;
+    font-weight: 600;
+    color: rgb(115, 115, 115);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: .8125rem;
+}
+
+.apps{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.item{
+    margin-bottom: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: rgb(115, 115, 115);
+    font-weight: 400;
+    font-size: 12px;
+}
