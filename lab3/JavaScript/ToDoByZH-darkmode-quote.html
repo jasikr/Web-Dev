@@ -1,0 +1,210 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            height: 60px;
+            background-color: rgb(39, 43, 43);
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .task-list {
+            margin-top: 3%;
+        }
+
+        li {
+            display: flex;
+            height: 40px;
+            align-items: center;
+            border: solid 1px;
+            border-color: rgb(220, 220, 220);
+            margin-top: 1px;
+            padding: 5px;
+        }
+
+        span {
+            margin-left: 10px;
+        }
+
+        button {
+            background-color: rgb(8, 109, 181);
+            transition: background-color 100ms linear 0s;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+        }
+
+        button:hover {
+            background-color: rgb(43, 138, 193);
+        }
+
+        .delete-btn {
+            border-radius: 5px;
+            background-color: transparent;
+            margin-left: auto;
+            border: none;
+            cursor: pointer;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        svg {
+            height: 20px;
+            width: 20px;
+        }
+
+        /* Dark Mode Style */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-mode header {
+            background-color: #1e1e1e;
+        }
+
+        .dark-mode li {
+            border-color: #555;
+            background-color: #333;
+        }
+
+        .dark-mode button {
+            background-color: #444;
+        }
+
+        .dark-mode button:hover {
+            background-color: #666;
+        }
+
+        .dark-mode .delete-btn svg {
+            stroke: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="padding-left: 10%; color: aliceblue; display: flex; padding-top: 20px; font-weight: 800; font-size: 20px;">
+            ToDo List
+        </div>
+    </header>
+
+    <section>
+        <div style="font-size: 30px;">
+            ToDo List by Zhanassyl
+        </div>
+
+        <button id="darkModeToggle" style="margin-top: 10px; align-self: flex-start;">🌙 Dark Mode</button>
+
+        <div style="display: flex; flex-direction: row; margin-left: 10%; margin-top: 5%;">
+            <input placeholder="New Task" type="text" style="width: 80%; height: 35px; border: solid 1px; border-color: rgb(220, 220, 220); ">
+            <button id="addButton" style="margin-left: 3%;">Add</button>
+        </div>
+
+        <div class="task-list">
+            <ul id="toDo"></ul>
+        </div>
+
+        <p id="quote" style="margin-top: 20px; font-style: italic; font-size: 16px; color: #666;"></p>
+    </section>
+
+    <script>
+        const addButton = document.getElementById("addButton");
+        const input = document.querySelector('input');
+        const taskList = document.getElementById('toDo');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const quoteDisplay = document.getElementById('quote');
+
+        const quotes = [
+            "The secret of getting ahead is getting started.",
+            "You miss 100% of the shots you don’t take.",
+            "Believe you can, and you’re halfway there.",
+            "Don’t watch the clock; do what it does. Keep going!",
+            "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "Small daily improvements over time lead to stunning results."
+        ];
+
+        addButton.addEventListener('click', () => {
+            let todo = input.value.trim();
+            if (!todo) {
+                return;
+            }
+            addToDo(todo);
+            input.value = "";
+        });
+
+        function addToDo(todo) {
+            const listItem = document.createElement('li');
+            const checkBox = document.createElement('input');
+            checkBox.type = 'checkbox';
+            checkBox.addEventListener('change', function () {
+                if (checkBox.checked) {
+                    textToDo.classList.add('completed');
+                    showQuote();
+                } else {
+                    textToDo.classList.remove('completed');
+                }
+            });
+
+            const textToDo = document.createElement('span');
+            textToDo.textContent = todo;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                    <title>Delete</title>
+                    <path d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320" 
+                        style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                    <line x1="80" y1="112" x2="432" y2="112" 
+                        style="stroke:red;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/>
+                    <path d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40" 
+                        style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                    <line x1="256" y1="176" x2="256" y2="400" 
+                        style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                </svg>
+            `;
+            deleteButton.className = 'delete-btn';
+            deleteButton.addEventListener('click', function () {
+                listItem.remove();
+            });
+
+            listItem.appendChild(checkBox);
+            listItem.appendChild(textToDo);
+            listItem.appendChild(deleteButton);
+
+            taskList.appendChild(listItem);
+        }
+
+        function showQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            quoteDisplay.textContent = `"${randomQuote}"`;
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = "☀️ Light Mode";
+            } else {
+                darkModeToggle.textContent = "🌙 Dark Mode";
+            }
+        });
+    </script>
+</body>
+</html>
