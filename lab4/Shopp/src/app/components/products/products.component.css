@@ -1,0 +1,153 @@
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: #3f3737;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+.product-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+.product-card a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+.product-card a:hover {
+  color: #0056b3;
+}
+.whatsapp-btn {
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #25D366;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.telegram-btn {
+  padding: 10px 20px;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #0088cc;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.telegram-btn:hover {
+  background-color: #007ab8;
+}
+
+.view-gallery-btn {
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background: #2018ba;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.view-gallery-btn:hover {
+  background: #0f0736;
+}
+.share-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.gallery-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 10;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.gallery-content h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.gallery-grid img {
+  width: 30%;
+  max-width: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.close-gallery {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #dc3545;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.close-gallery:hover {
+  background: #c82333;
+}

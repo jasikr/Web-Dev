@@ -1,0 +1,25 @@
+<div class="products-container">
+  <div *ngFor="let product of products" class="product-card">
+    <img class="product-image" [src]="product.image" alt="{{ product.name }}">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>⭐ {{ product.rating }}</p>
+    <a [href]="product.link" target="_blank">Link</a>
+    <div class="share-buttons">
+      <button class="whatsapp-btn" (click)="shareProduct(product.link, 'whatsapp')">WhatsApp</button>
+      <button class="telegram-btn" (click)="shareProduct(product.link, 'telegram')">Telegram
+      </button>
+    </div>
+    <button class="view-gallery-btn" (click)="showGallery(product)">Gallery</button>
+    
+    <div *ngIf="selectedProduct === product" class="gallery-overlay">
+      <div class="gallery-content">
+        <h4>Gallery: {{ product.name }}</h4>
+        <div class="gallery-grid">
+          <img *ngFor="let img of product.gallery" [src]="img" alt="{{ product.name }} gallery image">
+        </div>
+        <button class="close-gallery" (click)="hideGallery()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
