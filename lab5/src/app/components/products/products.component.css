@@ -1,0 +1,195 @@
+
+.category-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category-buttons button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-buttons button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.category-buttons button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f7f9;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: 150px;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 40%;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+
+.product-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product-card p:nth-child(3) {
+  font-size: 14px;
+  color: #ff9800;
+}
+
+.product-card p:nth-child(4) {
+  font-size: 14px;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.product-card a {
+  font-size: 14px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.product-card a:hover {
+  color: #0056b3;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+button.like-btn {
+  background-color: #b70b0b; 
+  color: white;
+}
+
+button.remove-btn {
+  background-color: #6936f4; 
+  color: white;
+}
+
+
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.share-buttons button {
+  width: 50%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.share-buttons .whatsapp-btn {
+  background-color: #25D366; 
+}
+
+.share-buttons .whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.share-buttons .telegram-btn {
+  background-color: #0088cc; 
+}
+
+.share-buttons .telegram-btn:hover {
+  background-color: #007ab8;
+}
+
+.gallery-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.gallery-content img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.close-gallery {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-gallery:hover {
+  background-color: #e53935;
+}
